@@ -9,49 +9,38 @@
 import UIKit
 
 class ViewController: UIViewController ,UITableViewDataSource, XMLParserDelegate{
+    @IBOutlet weak var mainTableView: UITableView!
     
-    var dataList = [[String:String]]()
-    var detailData = [String:String]()
-    var elementTemp: String = ""
-    var blank: Bool = false     //parser가 닫는 태그 뒤에 있는 blank도 string에 넣기 때문에 flag를 이용해서 처리해준다.
+    struct Weather:Decodable {
+        let country:String
+        let weather:String
+        let temperature:String
+    }
+    var dataList = [Weather]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let urlString = "https://raw.githubusercontent.com/ChoiJinYoung/iphonewithswift2/master/weather.xml"
-        /*url을 가져올때는 URL이라는 메소드를 사용해서 가져오면 된다.*/
-        guard let baseUrl = URL(string: urlString) else {
-            print("Url error")
-            return
-        }
-        // parsing은 XMLParser라는 메소드를 이용한다.
-        guard let parser = XMLParser(contentsOf: baseUrl) else {
-            print("Can not read data")
-            return
-        }
         
         
-        parser.delegate = self
-        if !parser.parse() {
-            print("Parse failure")
-        }
-    }
-    
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        elementTemp = elementName
-        blank = true
-    }
-    
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-        if blank == true && elementTemp != "local" && elementTemp != "weatherinfo" {
-            detailData[elementTemp] = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        }
-    }
-    
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if elementName == "local" {
-            dataList += [detailData]
-        }
-        blank = false
+        let jsonURLString = "https://raw.githubusercontent.com/ChoiJinYoung/iphonewithswift2/master/swift4weather.json"
+        
+        guard let jsonURL = URL(string: jsonURLString) else { return }
+        URLSession.shared.dataTask(with: jsonURL, completionHandler: {(data,response,error) -> Void in
+            guard let data = data else { return }
+            
+            do {
+                self.dataList = try JSONDecoder().decode([Weather].self, from: data)
+               // print
+                DispatchQueue.main.async(execute: {
+                    self.mainTableView.reloadData()
+                })
+            }
+            catch {
+                print("Parsing Error! \(error)")
+            }
+        }).resume() // URL Session후 resume을 빼먹으면 안된다.
+        
+        /*비동기라 테이블뷰가 보여지기 전에 다운로드를 받지 못한다. 따라서 테이블뷰를 리로드 해줘야한다.*/
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,13 +52,13 @@ class ViewController: UIViewController ,UITableViewDataSource, XMLParserDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! WeatherCell
         
         
-        var dicTemp = dataList[indexPath.row]   // 각 cell의 row를 받아올때는 indexPath.row를 이용한다.
-        let weatherStr = dicTemp["weather"]
+        let structTemp = dataList[indexPath.row]   // 각 cell의 row를 받아올때는 indexPath.row를 이용한다.
+        let weatherStr = structTemp.weather
         
-        cell.countryLabel.text = dicTemp["country"]
-        cell.weatherLabel.text = dicTemp["weather"]
+        cell.countryLabel.text = structTemp.country
+        cell.weatherLabel.text = structTemp.weather
         cell.temperatureLabel.text =
-            "\(dicTemp["temperature"]!)'C"
+            "\(structTemp.temperature)'C"
         
         if weatherStr == "맑음" {
             cell.ImgView.image = UIImage(named: "sunny.png")
