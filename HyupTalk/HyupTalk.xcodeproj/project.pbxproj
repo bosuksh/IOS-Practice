@@ -15,6 +15,8 @@
 		9792938A20675EAD00D76E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9792938820675EAD00D76E1E /* LaunchScreen.storyboard */; };
 		979293922067632B00D76E1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 979293912067632B00D76E1E /* GoogleService-Info.plist */; };
 		9792939420676BED00D76E1E /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9792939320676BED00D76E1E /* RemoteConfigDefaults.plist */; };
+		97A09D822070A4EB0009726B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A09D812070A4EB0009726B /* LoginViewController.swift */; };
+		97A09D842070AEB80009726B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A09D832070AEB80009726B /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		9792938B20675EAD00D76E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		979293912067632B00D76E1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9792939320676BED00D76E1E /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		97A09D812070A4EB0009726B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		97A09D832070AEB80009726B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DF24E98FBB57B59D696B6D34 /* Pods-HyupTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyupTalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyupTalk/Pods-HyupTalk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +85,8 @@
 				9792938620675EAD00D76E1E /* Assets.xcassets */,
 				9792938820675EAD00D76E1E /* LaunchScreen.storyboard */,
 				9792938B20675EAD00D76E1E /* Info.plist */,
+				97A09D812070A4EB0009726B /* LoginViewController.swift */,
+				97A09D832070AEB80009726B /* SignUpViewController.swift */,
 			);
 			path = HyupTalk;
 			sourceTree = "<group>";
@@ -189,16 +195,22 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HyupTalk/Pods-HyupTalk-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,7 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97A09D822070A4EB0009726B /* LoginViewController.swift in Sources */,
 				9792938220675EAC00D76E1E /* ViewController.swift in Sources */,
+				97A09D842070AEB80009726B /* SignUpViewController.swift in Sources */,
 				9792938020675EAC00D76E1E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
