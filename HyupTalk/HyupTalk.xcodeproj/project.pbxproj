@@ -15,6 +15,8 @@
 		9792938A20675EAD00D76E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9792938820675EAD00D76E1E /* LaunchScreen.storyboard */; };
 		979293922067632B00D76E1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 979293912067632B00D76E1E /* GoogleService-Info.plist */; };
 		9792939420676BED00D76E1E /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9792939320676BED00D76E1E /* RemoteConfigDefaults.plist */; };
+		979AF8FF20767642008A0490 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979AF8FE20767642008A0490 /* PeopleViewController.swift */; };
+		979AF9012076853F008A0490 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979AF9002076853F008A0490 /* UserModel.swift */; };
 		97A09D822070A4EB0009726B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A09D812070A4EB0009726B /* LoginViewController.swift */; };
 		97A09D842070AEB80009726B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A09D832070AEB80009726B /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +33,8 @@
 		9792938B20675EAD00D76E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		979293912067632B00D76E1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9792939320676BED00D76E1E /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		979AF8FE20767642008A0490 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		979AF9002076853F008A0490 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		97A09D812070A4EB0009726B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		97A09D832070AEB80009726B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DF24E98FBB57B59D696B6D34 /* Pods-HyupTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyupTalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyupTalk/Pods-HyupTalk.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 				9792938B20675EAD00D76E1E /* Info.plist */,
 				97A09D812070A4EB0009726B /* LoginViewController.swift */,
 				97A09D832070AEB80009726B /* SignUpViewController.swift */,
+				979AF8FE20767642008A0490 /* PeopleViewController.swift */,
+				979AF9002076853F008A0490 /* UserModel.swift */,
 			);
 			path = HyupTalk;
 			sourceTree = "<group>";
@@ -130,7 +136,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "이상협";
 				TargetAttributes = {
 					9792937B20675EAC00D76E1E = {
@@ -247,6 +253,8 @@
 				9792938220675EAC00D76E1E /* ViewController.swift in Sources */,
 				97A09D842070AEB80009726B /* SignUpViewController.swift in Sources */,
 				9792938020675EAC00D76E1E /* AppDelegate.swift in Sources */,
+				979AF9012076853F008A0490 /* UserModel.swift in Sources */,
+				979AF8FF20767642008A0490 /* PeopleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +294,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -293,6 +302,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -343,6 +353,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -350,6 +361,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

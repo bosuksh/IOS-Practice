@@ -115,13 +115,47 @@
                         <viewLayoutGuide key="safeArea" id="XJi-1g-09v"/>
                     </view>
                     <connections>
+                        <outlet property="email" destination="9Rn-C7-y9V" id="ve2-YQ-GAr"/>
                         <outlet property="loginButton" destination="G2Y-aw-6mI" id="2zq-bw-80N"/>
+                        <outlet property="password" destination="bT5-rB-hQK" id="brt-UL-k91"/>
                         <outlet property="signUpButton" destination="bIg-g9-9lj" id="apF-Uq-QHr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zH0-GQ-Dlb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="830" y="-297"/>
+        </scene>
+        <!--People-->
+        <scene sceneID="rPu-um-YiL">
+            <objects>
+                <viewController storyboardIdentifier="PeopleViewController" id="HxQ-qD-8XO" customClass="PeopleViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NMr-8E-OvH" customClass="MainView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ykV-GH-Zdv"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="People" image="ic_people" id="kJn-IH-GCq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SfM-Zf-rml" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2623.1999999999998" y="-297.30134932533736"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="ZDY-Bh-JMi">
+            <objects>
+                <viewController id="Fpb-gh-NFH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qrY-sX-8lR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="r5K-qK-bcT"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Chat" image="ic_chat" id="DyD-3h-TMb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="plQ-r1-2mK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2702" y="561"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="YBT-kV-LPp">
@@ -245,9 +279,47 @@
             </objects>
             <point key="canvasLocation" x="829.60000000000002" y="438.53073463268368"/>
         </scene>
+        <!--Account-->
+        <scene sceneID="18f-ny-NPy">
+            <objects>
+                <viewController id="kWz-c9-QeB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IGe-mS-tFt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="URs-t2-bFN"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Account" image="ic_account_circle" id="HjG-0R-66L"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KqW-It-tVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1751" y="561"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="SJl-8P-kEY">
+            <objects>
+                <tabBarController storyboardIdentifier="MainViewTabbarController" automaticallyAdjustsScrollViewInsets="NO" id="l7F-M5-aPW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="red-Eb-UhR">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="HxQ-qD-8XO" kind="relationship" relationship="viewControllers" id="Hdo-Gp-ypS"/>
+                        <segue destination="Fpb-gh-NFH" kind="relationship" relationship="viewControllers" id="VdY-W0-v8k"/>
+                        <segue destination="kWz-c9-QeB" kind="relationship" relationship="viewControllers" id="hyo-wK-WWZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NKH-da-6by" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1684" y="-297.30134932533736"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ic_account_circle" width="24" height="24"/>
         <image name="ic_add_to_photos" width="24" height="24"/>
+        <image name="ic_chat" width="24" height="24"/>
+        <image name="ic_people" width="24" height="24"/>
         <image name="loadingIcon" width="256" height="256"/>
     </resources>
 </document>
