@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -134,7 +134,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XAu-07-acd" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="16" y="217" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="y1s-5T-4Hc"/>
+                                    <constraint firstAttribute="height" constant="40" id="tYK-dK-4pC"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -151,7 +151,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Z1-Ye-Unh" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="16" y="265" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="aG4-Zv-49S"/>
+                                    <constraint firstAttribute="height" constant="40" id="xdD-7U-otk"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -168,7 +168,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jxM-Qu-5r0" userLabel="password" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="16" y="313" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="xoi-sB-Epm"/>
+                                    <constraint firstAttribute="height" constant="40" id="zVO-Bf-T7m"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -186,7 +186,7 @@
                                 <rect key="frame" x="16" y="361" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="gfW-VK-L7c"/>
+                                    <constraint firstAttribute="height" constant="40" id="27c-gm-p2R"/>
                                 </constraints>
                                 <state key="normal" title="회원가입">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -196,36 +196,46 @@
                                 <rect key="frame" x="16" y="409" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="PlL-cF-FMv"/>
+                                    <constraint firstAttribute="height" constant="40" id="4EJ-ev-7ab"/>
                                 </constraints>
                                 <state key="normal" title="취소">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add_to_photos" translatesAutoresizingMaskIntoConstraints="NO" id="e1i-Wd-p4B">
+                                <rect key="frame" x="137" y="109" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="DcW-B0-8DQ"/>
+                                    <constraint firstAttribute="height" constant="100" id="xCq-Zn-XOn"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0Z1-Ye-Unh" firstAttribute="leading" secondItem="hyF-WO-hrf" secondAttribute="leading" constant="16" id="0ew-WE-yY8"/>
-                            <constraint firstItem="hyF-WO-hrf" firstAttribute="trailing" secondItem="0Z1-Ye-Unh" secondAttribute="trailing" constant="16" id="1wv-i7-zTq"/>
-                            <constraint firstItem="gT6-li-Cas" firstAttribute="top" secondItem="RjK-8b-4Bu" secondAttribute="bottom" constant="8" id="3Fq-bs-Mmt"/>
-                            <constraint firstItem="RjK-8b-4Bu" firstAttribute="top" secondItem="jxM-Qu-5r0" secondAttribute="bottom" constant="8" id="E6T-Ye-90F"/>
-                            <constraint firstItem="0Z1-Ye-Unh" firstAttribute="top" secondItem="XAu-07-acd" secondAttribute="bottom" constant="8" id="EFh-ss-BCh"/>
-                            <constraint firstItem="XAu-07-acd" firstAttribute="top" secondItem="hyF-WO-hrf" secondAttribute="top" constant="197" id="GdS-Ru-Nxq"/>
-                            <constraint firstItem="jxM-Qu-5r0" firstAttribute="leading" secondItem="hyF-WO-hrf" secondAttribute="leading" constant="16" id="J8a-Rm-otx"/>
-                            <constraint firstItem="gT6-li-Cas" firstAttribute="leading" secondItem="hyF-WO-hrf" secondAttribute="leading" constant="16" id="JSW-Nm-Vjx"/>
-                            <constraint firstItem="hyF-WO-hrf" firstAttribute="trailing" secondItem="XAu-07-acd" secondAttribute="trailing" constant="16" id="Ucj-0L-Ep9"/>
-                            <constraint firstItem="hyF-WO-hrf" firstAttribute="trailing" secondItem="RjK-8b-4Bu" secondAttribute="trailing" constant="16" id="UyO-9i-HgK"/>
-                            <constraint firstItem="jxM-Qu-5r0" firstAttribute="top" secondItem="0Z1-Ye-Unh" secondAttribute="bottom" constant="8" id="aq9-U0-Ssu"/>
-                            <constraint firstItem="XAu-07-acd" firstAttribute="leading" secondItem="hyF-WO-hrf" secondAttribute="leading" constant="16" id="bZO-HV-ark"/>
-                            <constraint firstItem="RjK-8b-4Bu" firstAttribute="leading" secondItem="hyF-WO-hrf" secondAttribute="leading" constant="16" id="cRq-OY-6Be"/>
-                            <constraint firstItem="hyF-WO-hrf" firstAttribute="trailing" secondItem="gT6-li-Cas" secondAttribute="trailing" constant="16" id="n8g-mS-lDc"/>
-                            <constraint firstItem="hyF-WO-hrf" firstAttribute="trailing" secondItem="jxM-Qu-5r0" secondAttribute="trailing" constant="16" id="wFO-A4-OVV"/>
+                            <constraint firstItem="0Z1-Ye-Unh" firstAttribute="leading" secondItem="hyF-WO-hrf" secondAttribute="leading" constant="16" id="0gf-nc-ksO"/>
+                            <constraint firstItem="RjK-8b-4Bu" firstAttribute="top" secondItem="jxM-Qu-5r0" secondAttribute="bottom" constant="8" id="48a-yE-9Fh"/>
+                            <constraint firstItem="hyF-WO-hrf" firstAttribute="trailing" secondItem="jxM-Qu-5r0" secondAttribute="trailing" constant="16" id="9ZI-gu-U5c"/>
+                            <constraint firstItem="hyF-WO-hrf" firstAttribute="trailing" secondItem="XAu-07-acd" secondAttribute="trailing" constant="16" id="D2e-r6-kYL"/>
+                            <constraint firstItem="gT6-li-Cas" firstAttribute="leading" secondItem="hyF-WO-hrf" secondAttribute="leading" constant="16" id="Gj8-2f-xjX"/>
+                            <constraint firstItem="0Z1-Ye-Unh" firstAttribute="top" secondItem="XAu-07-acd" secondAttribute="bottom" constant="8" id="NI1-t3-a3w"/>
+                            <constraint firstItem="XAu-07-acd" firstAttribute="top" secondItem="e1i-Wd-p4B" secondAttribute="bottom" constant="8" id="Tmy-4M-r9u"/>
+                            <constraint firstItem="jxM-Qu-5r0" firstAttribute="leading" secondItem="hyF-WO-hrf" secondAttribute="leading" constant="16" id="Wrb-cK-FKl"/>
+                            <constraint firstItem="jxM-Qu-5r0" firstAttribute="top" secondItem="0Z1-Ye-Unh" secondAttribute="bottom" constant="8" id="Z8M-a6-3hj"/>
+                            <constraint firstItem="e1i-Wd-p4B" firstAttribute="centerX" secondItem="ahX-UV-7Ih" secondAttribute="centerX" id="c7r-C8-70J"/>
+                            <constraint firstItem="gT6-li-Cas" firstAttribute="top" secondItem="RjK-8b-4Bu" secondAttribute="bottom" constant="8" id="cyn-05-ozT"/>
+                            <constraint firstItem="e1i-Wd-p4B" firstAttribute="top" secondItem="hyF-WO-hrf" secondAttribute="top" constant="89" id="hfZ-Yy-hSD"/>
+                            <constraint firstItem="RjK-8b-4Bu" firstAttribute="leading" secondItem="hyF-WO-hrf" secondAttribute="leading" constant="16" id="kUL-HL-gU5"/>
+                            <constraint firstItem="hyF-WO-hrf" firstAttribute="trailing" secondItem="RjK-8b-4Bu" secondAttribute="trailing" constant="16" id="mLA-v1-38w"/>
+                            <constraint firstItem="hyF-WO-hrf" firstAttribute="trailing" secondItem="0Z1-Ye-Unh" secondAttribute="trailing" constant="16" id="oek-TC-11e"/>
+                            <constraint firstItem="XAu-07-acd" firstAttribute="leading" secondItem="hyF-WO-hrf" secondAttribute="leading" constant="16" id="omN-hd-Tgb"/>
+                            <constraint firstItem="hyF-WO-hrf" firstAttribute="trailing" secondItem="gT6-li-Cas" secondAttribute="trailing" constant="16" id="ynN-Db-S2O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hyF-WO-hrf"/>
                     </view>
                     <connections>
                         <outlet property="cancel" destination="gT6-li-Cas" id="dOl-hI-l9R"/>
                         <outlet property="email" destination="XAu-07-acd" id="RhD-7B-2Ut"/>
+                        <outlet property="imageView" destination="e1i-Wd-p4B" id="tMB-cu-QTh"/>
                         <outlet property="name" destination="0Z1-Ye-Unh" id="Qlf-3a-cvf"/>
                         <outlet property="password" destination="jxM-Qu-5r0" id="Py4-eL-VON"/>
                         <outlet property="signUp" destination="RjK-8b-4Bu" id="OHA-N5-47X"/>
@@ -237,6 +247,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_add_to_photos" width="24" height="24"/>
         <image name="loadingIcon" width="256" height="256"/>
     </resources>
 </document>
