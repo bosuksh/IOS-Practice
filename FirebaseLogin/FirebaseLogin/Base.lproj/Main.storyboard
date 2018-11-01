@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,6 +66,19 @@
                                     <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ewl-rQ-bfH"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12i-kG-0g1" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="72" y="396.5" width="230" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="NcY-IM-pGF"/>
+                                    <constraint firstAttribute="height" constant="48" id="cpc-XN-VjP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="d6x-j4-YEb"/>
+                                    <constraint firstAttribute="width" constant="230" id="h4w-X4-VDr"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="valueChanged" id="vQ2-4o-XFv"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -74,6 +87,8 @@
                             <constraint firstItem="xnp-BT-vjr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="ET7-uO-0De"/>
                             <constraint firstItem="xnp-BT-vjr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MUO-sL-eaM"/>
                             <constraint firstItem="Rnh-T3-gvS" firstAttribute="top" secondItem="LRn-Uo-3dj" secondAttribute="bottom" constant="18" id="OGp-9j-qzT"/>
+                            <constraint firstItem="12i-kG-0g1" firstAttribute="leading" secondItem="Rnh-T3-gvS" secondAttribute="leading" id="VUE-aG-zbK"/>
+                            <constraint firstItem="12i-kG-0g1" firstAttribute="top" secondItem="xnp-BT-vjr" secondAttribute="bottom" constant="39" id="Xuo-qD-fsy"/>
                             <constraint firstItem="xnp-BT-vjr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cQU-u8-cjt"/>
                             <constraint firstItem="LRn-Uo-3dj" firstAttribute="leading" secondItem="Rnh-T3-gvS" secondAttribute="leading" id="ch6-pp-Gdb"/>
                             <constraint firstItem="LRn-Uo-3dj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="187" id="f9R-EH-15p"/>
@@ -84,6 +99,7 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="3YP-bu-TTr" id="xqI-MO-1ma"/>
+                        <outlet property="facebookLoginButton" destination="12i-kG-0g1" id="LWr-RU-ot6"/>
                         <outlet property="password" destination="LRn-Uo-3dj" id="auy-Kq-QiZ"/>
                     </connections>
                 </viewController>

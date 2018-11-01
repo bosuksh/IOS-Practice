@@ -9,13 +9,37 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKLoginKit
 
-class ViewController: UIViewController, GIDSignInUIDelegate{
+class ViewController: UIViewController, GIDSignInUIDelegate,FBSDKLoginButtonDelegate{
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult?, error: Error!) {
+        if result?.token == nil {
+            return
+        }
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            if let error = error {
+                // ...
+                return
+            }
+            // User is signed in
+            // ...
+        }
+        FBSDKLoginManager().logOut()
+
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        return
+    }
+    
 
     @IBAction func signIn(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signIn()
 
     }
+    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBAction func Login(_ sender: Any) {
@@ -38,6 +62,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance()?.uiDelegate = self
+            facebookLoginButton.delegate  = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirebaseLogin/ViewController.swift"
-            timestampString = "562522506.193694"
+            timestampString = "562783085.504917"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "Login(_:)"
             landmarkType = "7">
          </BreakpointContent>
