@@ -14,4 +14,6 @@ target 'FirebaseLogin' do
   pod 'FBSDKShareKit'
   pod 'FBSDKPlacesKit'
   pod 'FBSDKMessengerShareKit'
+  pod 'Firebase/Storage'
+
 end

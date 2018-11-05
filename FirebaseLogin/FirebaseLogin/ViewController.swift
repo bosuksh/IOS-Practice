@@ -49,23 +49,33 @@ class ViewController: UIViewController, GIDSignInUIDelegate,FBSDKLoginButtonDele
             
             if (error != nil ) {
                 print(error?.localizedDescription)
-                return}
-            
-            
-            let alert  = UIAlertController(title: "알림", message: "회원가입완료", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
-            
+                
+                Auth.auth().signIn(withEmail: self.email.text!, password: self.password.text!, completion: {(user, err) in
+                    
+                })
+                return
+                
+            } else {
+          
+                let alert  = UIAlertController(title: "알림", message: "회원가입완료", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert,animated: true, completion: nil)
+            }
             
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance()?.uiDelegate = self
-            facebookLoginButton.delegate  = self
+        facebookLoginButton.delegate  = self
+        
+        Auth.auth().addStateDidChangeListener({ (user,err) in
+            if user != nil {
+                self.performSegue(withIdentifier: "home", sender: nil)
+            }
+        })
         // Do any additional setup after loading the view, typically from a nib.
     }
-
 
 }
 
