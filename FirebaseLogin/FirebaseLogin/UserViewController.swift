@@ -47,4 +47,37 @@ class UserViewController: UIViewController, UINavigationControllerDelegate, UIIm
     }
     */
 
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let image =  info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        //print(image)
+        let imageName = (Auth.auth().currentUser?.uid)!+"\(Int(NSDate.timeIntervalSinceReferenceDate*1000)).jpg"
+        
+        let data = image.jpegData(compressionQuality: 0.5)
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        
+        let riversRef = Storage.storage().reference().child("ios_images").child(imageName)
+        
+        riversRef.putData(data!, metadata: metadata) { (metadata, err) in
+            guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                print(err?.localizedDescription)
+                return
+            }
+            // Metadata contains file metadata such as size, content-type.
+            let size = metadata.size
+            // You can also access to download URL after upload.
+            riversRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    // Uh-oh, an error occurred!
+                    return
+                }
+            }
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }

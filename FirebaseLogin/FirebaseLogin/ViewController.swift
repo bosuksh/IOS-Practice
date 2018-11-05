@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import FBSDKLoginKit
+import FirebaseStorage
 
-class ViewController: UIViewController, GIDSignInUIDelegate,FBSDKLoginButtonDelegate{
+class ViewController: UIViewController, GIDSignInUIDelegate,FBSDKLoginButtonDelegate, UIImagePickerControllerDelegate{
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult?, error: Error!) {
         if result?.token == nil {
             return
@@ -76,6 +77,9 @@ class ViewController: UIViewController, GIDSignInUIDelegate,FBSDKLoginButtonDele
         })
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+
+    
 
 }
 
