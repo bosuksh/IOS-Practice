@@ -173,7 +173,7 @@
                                 <rect key="frame" x="131.5" y="270" width="112" height="30"/>
                                 <state key="normal" title="프로필 사진 업로드"/>
                                 <connections>
-                                    <action selector="profileUpload:" destination="XcZ-fX-h9z" eventType="touchUpInside" id="AbC-ob-V5v"/>
+                                    <segue destination="c4W-Tx-RZb" kind="show" id="HLz-qg-O0e"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -192,6 +192,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hob-PY-GLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2084" y="778"/>
+        </scene>
+        <!--Upload View Controller-->
+        <scene sceneID="36y-bv-QvW">
+            <objects>
+                <viewController id="c4W-Tx-RZb" customClass="UploadViewController" customModule="FirebaseLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ob2-3D-gCR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ptb-oB-g7R">
+                                <rect key="frame" x="67" y="73" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H7Z-a8-diC">
+                                <rect key="frame" x="67" y="239" width="240" height="30"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gk1-fa-D1Z">
+                                <rect key="frame" x="67" y="294" width="240" height="30"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L20-SG-8Mc">
+                                <rect key="frame" x="164" y="362" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="uploadButton:" destination="c4W-Tx-RZb" eventType="touchUpInside" id="d6B-ef-Ylb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SAl-18-sUV" firstAttribute="trailing" secondItem="gk1-fa-D1Z" secondAttribute="trailing" constant="68" id="96F-xe-iju"/>
+                            <constraint firstItem="SAl-18-sUV" firstAttribute="trailing" secondItem="ptb-oB-g7R" secondAttribute="trailing" constant="68" id="9Wd-MU-jui"/>
+                            <constraint firstItem="ptb-oB-g7R" firstAttribute="leading" secondItem="SAl-18-sUV" secondAttribute="leading" constant="67" id="Ay4-Hj-wQR"/>
+                            <constraint firstItem="L20-SG-8Mc" firstAttribute="leading" secondItem="SAl-18-sUV" secondAttribute="leading" constant="164" id="BU9-Os-cz7"/>
+                            <constraint firstItem="gk1-fa-D1Z" firstAttribute="top" secondItem="H7Z-a8-diC" secondAttribute="bottom" constant="25" id="H2c-Sc-Cb9"/>
+                            <constraint firstItem="SAl-18-sUV" firstAttribute="trailing" secondItem="H7Z-a8-diC" secondAttribute="trailing" constant="68" id="JeG-Jf-akt"/>
+                            <constraint firstItem="ptb-oB-g7R" firstAttribute="top" secondItem="SAl-18-sUV" secondAttribute="top" constant="53" id="KkB-1N-XoD"/>
+                            <constraint firstItem="H7Z-a8-diC" firstAttribute="leading" secondItem="SAl-18-sUV" secondAttribute="leading" constant="67" id="Lae-H0-bDr"/>
+                            <constraint firstItem="H7Z-a8-diC" firstAttribute="top" secondItem="ptb-oB-g7R" secondAttribute="bottom" constant="38" id="Ty0-Db-uiL"/>
+                            <constraint firstItem="L20-SG-8Mc" firstAttribute="top" secondItem="gk1-fa-D1Z" secondAttribute="bottom" constant="38" id="V3s-bl-UOv"/>
+                            <constraint firstItem="gk1-fa-D1Z" firstAttribute="leading" secondItem="SAl-18-sUV" secondAttribute="leading" constant="67" id="fad-EN-lST"/>
+                            <constraint firstItem="SAl-18-sUV" firstAttribute="trailing" secondItem="L20-SG-8Mc" secondAttribute="trailing" constant="165" id="rje-4Q-Ix8"/>
+                            <constraint firstItem="SAl-18-sUV" firstAttribute="bottom" secondItem="L20-SG-8Mc" secondAttribute="bottom" constant="275" id="uZh-Gw-Ulw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SAl-18-sUV"/>
+                    </view>
+                    <connections>
+                        <outlet property="explanation" destination="gk1-fa-D1Z" id="sV2-eg-29z"/>
+                        <outlet property="imageView" destination="ptb-oB-g7R" id="9M1-NT-VpV"/>
+                        <outlet property="name" destination="H7Z-a8-diC" id="Cbd-9J-QoS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CPj-IM-ZLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3052" y="783.95802098950526"/>
         </scene>
     </scenes>
 </document>

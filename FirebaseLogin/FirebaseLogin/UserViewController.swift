@@ -20,15 +20,7 @@ class UserViewController: UIViewController, UINavigationControllerDelegate, UIIm
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func profileUpload(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-        
-        self.present(imagePicker, animated:  true, completion: nil)
-        
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

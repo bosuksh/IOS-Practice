@@ -16,6 +16,7 @@
 		97B1364021875B15009D4365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97B1363F21875B15009D4365 /* Assets.xcassets */; };
 		97B1364321875B15009D4365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97B1364121875B15009D4365 /* LaunchScreen.storyboard */; };
 		97B1364B21875C66009D4365 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97B1364A21875C66009D4365 /* GoogleService-Info.plist */; };
+		97C12EBB21918A4F00628E36 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C12EBA21918A4F00628E36 /* UploadViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		97B1364221875B15009D4365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97B1364421875B15009D4365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97B1364A21875C66009D4365 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97C12EBA21918A4F00628E36 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		ACBE6084590E784501F033FB /* Pods-FirebaseLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseLogin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseLogin/Pods-FirebaseLogin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				97B1364A21875C66009D4365 /* GoogleService-Info.plist */,
 				97B1364121875B15009D4365 /* LaunchScreen.storyboard */,
 				97B1364421875B15009D4365 /* Info.plist */,
+				97C12EBA21918A4F00628E36 /* UploadViewController.swift */,
 			);
 			path = FirebaseLogin;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -217,6 +221,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97B1363B21875B11009D4365 /* ViewController.swift in Sources */,
+				97C12EBB21918A4F00628E36 /* UploadViewController.swift in Sources */,
 				976BA12D218D7B4500959D6E /* UserViewController.swift in Sources */,
 				97B1363921875B11009D4365 /* AppDelegate.swift in Sources */,
 				976BA12B218D7B1300959D6E /* HomeViewController.swift in Sources */,
