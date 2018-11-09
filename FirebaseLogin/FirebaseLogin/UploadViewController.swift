@@ -47,7 +47,7 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                     // Uh-oh, an error occurred!
                     return
                 }
-                Database.database().reference().child("users").setValue([
+                Database.database().reference().child("users").childByAutoId().setValue([
                     "userID": Auth.auth().currentUser?.email,
                     "uid": Auth.auth().currentUser?.uid,
                     "subject": self.name.text!,

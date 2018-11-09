@@ -9,17 +9,42 @@
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController {
 
-   
-    @IBOutlet weak var label: UILabel!
+class HomeViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    var array: [UserDTO] = []
+    var uidKey: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = Auth.auth().currentUser?.email
+        
+        
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        Database.database().reference().child("users").observeSingleEvent(of: .value) { (DataSnapshot) in
+            
+            self.array.removeAll()
+            for child in DataSnapshot.children {
+                let fchild = child as! DataSnapshot
+                let value = fchild.value as! NSDictionary
+                let userDTO = UserDTO()
+                userDTO.explanation = value["explanation"] as! String
+                userDTO.imageUrl = value["imageURL"] as! String
+                userDTO.subject = value["subject"] as! String
+                userDTO.uid = value["uid"] as! String
+                userDTO.userID = value["userID"] as! String
+                
+                self.array.append(userDTO)
+                
+            }
+            self.collectionView.reloadData()
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -30,5 +55,29 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return array.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RowCell", for: indexPath) as! CustomCell
+        
+        cell.subject.text = array[indexPath.row].subject
+        cell.explanation.text = array[indexPath.row].explanation
+        
+        let data = try? Data(contentsOf: URL(string: array[indexPath.row].imageUrl!)!)
+        cell.imageView.image = UIImage(data: data!)
+        
+        return cell
+    }
 
+}
+
+class CustomCell: UICollectionViewCell {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var subject: UILabel!
+    @IBOutlet weak var explanation: UILabel!
 }
