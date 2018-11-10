@@ -17,5 +17,6 @@ class UserDTO: NSObject {
     var imageUrl: String?
     var starCount: NSNumber?
     var stars: [String:Bool]?
+    var imageName: String?
     
 }

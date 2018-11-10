@@ -24,7 +24,7 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         let imageName = (Auth.auth().currentUser?.uid)!+"\(Int(NSDate.timeIntervalSinceReferenceDate*1000)).jpg"
         
         let image = imageView.image
-        let data = image!.jpegData(compressionQuality: 0.5)
+        let data = image!.jpegData(compressionQuality: 0.1)
         
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
@@ -53,6 +53,7 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                     "subject": self.name.text!,
                     "explanation": self.explanation.text!,
                     "imageURL": downloadURL.absoluteString,
+                    "imageName": imageName
                     ])
                 self.dismiss(animated: true, completion: nil)
             }

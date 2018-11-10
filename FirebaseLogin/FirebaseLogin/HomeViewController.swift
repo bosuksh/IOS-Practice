@@ -26,7 +26,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate, UICollectio
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        Database.database().reference().child("users").observeSingleEvent(of: .value) { (DataSnapshot) in
+        Database.database().reference().child("users").observe(.value) { (DataSnapshot) in
             self.uidKey.removeAll()
             self.array.removeAll()
             for child in DataSnapshot.children {
@@ -38,6 +38,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate, UICollectio
                 userDTO.subject = value["subject"] as! String
                 userDTO.uid = value["uid"] as! String
                 userDTO.userID = value["userID"] as! String
+                userDTO.imageName = value["imageName"] as! String
                 let uidkey = fchild.key as! String
                 
                 if let stars = value["stars"] {
@@ -48,8 +49,12 @@ class HomeViewController: UIViewController,UICollectionViewDelegate, UICollectio
                 }
                 self.array.append(userDTO)
                 self.uidKey.append(uidkey)
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
             }
-            self.collectionView.reloadData()
+           
         }
     }
 
@@ -99,6 +104,18 @@ class HomeViewController: UIViewController,UICollectionViewDelegate, UICollectio
             }
         }
     }
+    @objc func deleteImage(_ sender: UIButton) {
+        let desertRef = Storage.storage().reference().child("ios_images").child(self.array[sender.tag].imageName!)
+        
+        // Delete the file
+        desertRef.delete { error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+            } else {
+                // File deleted successfully
+            }
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return array.count
@@ -116,6 +133,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate, UICollectio
         
         cell.starButton.tag = indexPath.row
         cell.starButton.addTarget(self, action: #selector(like(_:)), for: .touchUpInside)
+        cell.deleteButton.tag = indexPath.row
+        cell.deleteButton.addTarget(self, action: #selector(deleteImage(_:)), for: .touchUpInside)
         
         
         return cell
@@ -125,6 +144,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate, UICollectio
 
 class CustomCell: UICollectionViewCell {
     
+    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var subject: UILabel!
     @IBOutlet weak var explanation: UILabel!
