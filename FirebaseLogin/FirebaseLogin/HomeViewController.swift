@@ -49,10 +49,9 @@ class HomeViewController: UIViewController,UICollectionViewDelegate, UICollectio
                 }
                 self.array.append(userDTO)
                 self.uidKey.append(uidkey)
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-                
+            }
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
            
         }
@@ -70,11 +69,6 @@ class HomeViewController: UIViewController,UICollectionViewDelegate, UICollectio
     
     @objc func like(_ sender: UIButton) {
         
-        if sender.currentImage == #imageLiteral(resourceName: "baseline_favorite_border_black_24pt") {
-            sender.setImage(#imageLiteral(resourceName: "baseline_favorite_black_24pt"), for: .normal)
-        }else {
-            sender.setImage(#imageLiteral(resourceName: "baseline_favorite_border_black_24pt"), for: .normal)
-        }
     Database.database().reference().child("users").child(self.uidKey[sender.tag]).runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
         if var post = currentData.value as? [String : AnyObject], let uid = Auth.auth().currentUser?.uid {
             var stars: Dictionary<String, Bool>
@@ -106,13 +100,15 @@ class HomeViewController: UIViewController,UICollectionViewDelegate, UICollectio
     }
     @objc func deleteImage(_ sender: UIButton) {
         let desertRef = Storage.storage().reference().child("ios_images").child(self.array[sender.tag].imageName!)
-        
+        let ref = Database.database().reference().child("users")
         // Delete the file
         desertRef.delete { error in
             if let error = error {
+                print("삭제 에러")
                 // Uh-oh, an error occurred!
             } else {
                 // File deleted successfully
+                ref.child(self.uidKey[sender.tag]).removeValue()
             }
         }
     }
@@ -128,14 +124,27 @@ class HomeViewController: UIViewController,UICollectionViewDelegate, UICollectio
         cell.subject.text = array[indexPath.row].subject
         cell.explanation.text = array[indexPath.row].explanation
         
-        let data = try? Data(contentsOf: URL(string: array[indexPath.row].imageUrl!)!)
-        cell.imageView.image = UIImage(data: data!)
+        URLSession.shared.dataTask(with: URL(string: array[indexPath.row].imageUrl!)!) {
+            (data, response, err) in
+            if err != nil {
+                return
+            }
+            
+            DispatchQueue.main.async {
+               cell.imageView.image = UIImage(data: data!)
+            }
+        }.resume()
         
         cell.starButton.tag = indexPath.row
         cell.starButton.addTarget(self, action: #selector(like(_:)), for: .touchUpInside)
         cell.deleteButton.tag = indexPath.row
         cell.deleteButton.addTarget(self, action: #selector(deleteImage(_:)), for: .touchUpInside)
         
+        if let _ = self.array[indexPath.row].stars?[(Auth.auth().currentUser?.uid)!] {
+            cell.starButton.setImage(#imageLiteral(resourceName: "baseline_favorite_black_24pt"), for: .normal)
+        }else {
+            cell.starButton.setImage(#imageLiteral(resourceName: "baseline_favorite_border_black_24pt"), for: .normal)
+        }
         
         return cell
     }

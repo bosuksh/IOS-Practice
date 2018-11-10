@@ -129,7 +129,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="361" height="213"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CDT-pn-wkG">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CDT-pn-wkG">
                                                     <rect key="frame" x="0.0" y="0.0" width="361" height="150"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="LJa-tY-rN7"/>
@@ -270,7 +270,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ptb-oB-g7R">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ptb-oB-g7R">
                                 <rect key="frame" x="67" y="73" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -289,8 +289,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L20-SG-8Mc">
-                                <rect key="frame" x="164" y="362" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="148" y="362" width="62" height="30"/>
+                                <state key="normal" title="Upload"/>
                                 <connections>
                                     <action selector="uploadButton:" destination="c4W-Tx-RZb" eventType="touchUpInside" id="d6B-ef-Ylb"/>
                                 </connections>
@@ -301,7 +301,7 @@
                             <constraint firstItem="SAl-18-sUV" firstAttribute="trailing" secondItem="gk1-fa-D1Z" secondAttribute="trailing" constant="68" id="96F-xe-iju"/>
                             <constraint firstItem="SAl-18-sUV" firstAttribute="trailing" secondItem="ptb-oB-g7R" secondAttribute="trailing" constant="68" id="9Wd-MU-jui"/>
                             <constraint firstItem="ptb-oB-g7R" firstAttribute="leading" secondItem="SAl-18-sUV" secondAttribute="leading" constant="67" id="Ay4-Hj-wQR"/>
-                            <constraint firstItem="L20-SG-8Mc" firstAttribute="leading" secondItem="SAl-18-sUV" secondAttribute="leading" constant="164" id="BU9-Os-cz7"/>
+                            <constraint firstItem="L20-SG-8Mc" firstAttribute="leading" secondItem="SAl-18-sUV" secondAttribute="leading" constant="148" id="BU9-Os-cz7"/>
                             <constraint firstItem="gk1-fa-D1Z" firstAttribute="top" secondItem="H7Z-a8-diC" secondAttribute="bottom" constant="25" id="H2c-Sc-Cb9"/>
                             <constraint firstItem="SAl-18-sUV" firstAttribute="trailing" secondItem="H7Z-a8-diC" secondAttribute="trailing" constant="68" id="JeG-Jf-akt"/>
                             <constraint firstItem="ptb-oB-g7R" firstAttribute="top" secondItem="SAl-18-sUV" secondAttribute="top" constant="53" id="KkB-1N-XoD"/>
