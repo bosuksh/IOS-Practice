@@ -148,13 +148,19 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX1-pk-w0c">
+                                                    <rect key="frame" x="20" y="169" width="24" height="24"/>
+                                                    <state key="normal" image="baseline_favorite_border_black_24pt"/>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="fX1-pk-w0c" firstAttribute="leading" secondItem="kVl-hG-BGB" secondAttribute="leadingMargin" constant="12" id="Bva-W7-RFB"/>
                                             <constraint firstItem="IkC-3b-rkc" firstAttribute="top" secondItem="iJV-jJ-48y" secondAttribute="bottom" constant="3" id="D4I-Sa-hWd"/>
                                             <constraint firstAttribute="trailing" secondItem="CDT-pn-wkG" secondAttribute="trailing" id="KQK-On-zUA"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="IkC-3b-rkc" secondAttribute="trailing" constant="4" id="NnX-08-wfA"/>
                                             <constraint firstItem="CDT-pn-wkG" firstAttribute="top" secondItem="kVl-hG-BGB" secondAttribute="top" id="eOH-IJ-68n"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="fX1-pk-w0c" secondAttribute="bottom" constant="12" id="fhm-UC-lnG"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="iJV-jJ-48y" secondAttribute="trailing" constant="4" id="gzs-2k-ttO"/>
                                             <constraint firstItem="CDT-pn-wkG" firstAttribute="leading" secondItem="kVl-hG-BGB" secondAttribute="leading" id="pFc-ah-cgk"/>
                                             <constraint firstItem="iJV-jJ-48y" firstAttribute="top" secondItem="CDT-pn-wkG" secondAttribute="bottom" constant="11" id="u4r-1I-fsg"/>
@@ -162,6 +168,7 @@
                                         <connections>
                                             <outlet property="explanation" destination="IkC-3b-rkc" id="eGl-QU-hag"/>
                                             <outlet property="imageView" destination="CDT-pn-wkG" id="fch-Kj-V6E"/>
+                                            <outlet property="starButton" destination="fX1-pk-w0c" id="XkA-bm-lHH"/>
                                             <outlet property="subject" destination="iJV-jJ-48y" id="qjw-yO-h3z"/>
                                         </connections>
                                     </collectionViewCell>
@@ -311,4 +318,7 @@
             <point key="canvasLocation" x="3052" y="783.95802098950526"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="baseline_favorite_border_black_24pt" width="24" height="24"/>
+    </resources>
 </document>

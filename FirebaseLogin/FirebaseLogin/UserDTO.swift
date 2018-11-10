@@ -15,5 +15,7 @@ class UserDTO: NSObject {
     var subject: String?
     var explanation: String?
     var imageUrl: String?
+    var starCount: NSNumber?
+    var stars: [String:Bool]?
     
 }
